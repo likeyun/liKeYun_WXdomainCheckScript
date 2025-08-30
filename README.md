@@ -44,4 +44,4 @@
 
 3. **启动 HTTP 服务**  
    ```bash
-   python weixin_domain_check.py
+   python check.py
