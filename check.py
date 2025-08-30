@@ -4,7 +4,7 @@ import time
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
-import pyperclip  # 用于剪贴板操作
+import pyperclip
 
 def find_all_controls(control, results=None):
     """递归收集所有控件"""
@@ -71,7 +71,7 @@ def automate_url(url):
         except Exception as e:
             return {"code": -2, "msg": f"操作失败: {e}", "url": url, "ret": {"title": "", "desc": ""}}
 
-# HTTP 服务器部分保持不变
+# HTTP 服务器
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         parsed_path = urlparse(self.path)
