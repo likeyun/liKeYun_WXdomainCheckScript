@@ -1,4 +1,4 @@
-# liKeYun_WeixinDomainCheckPyScript
+# liKeYun_WXdomainCheckScript
 
 微信域名检测自动化 HTTP 服务脚本，可检测域名在微信内是否被封或被拦截。  
 支持检测情况包括：  
