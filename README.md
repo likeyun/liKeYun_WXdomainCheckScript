@@ -1,4 +1,4 @@
-# liKeYun_WXdomainCheckScript
+## 📝 摘要
 
 微信域名检测自动化 HTTP 服务脚本，可检测域名在微信内是否被封或被拦截。  
 支持检测情况包括：  
@@ -32,19 +32,19 @@
 ## 🚀 如何使用
 
 1. **登录微信电脑版**  
-   - 版本要求：最新版 Windows 微信（版本号 4.1.0.18）  
+- 版本要求：最新版 Windows 微信（版本号 4.1.0.18）  
 
 2. **打开任意网页**  
-   - 窗口保持最小  
-   - 窗口左上角到搜索框中间位置：265 像素  
-   - 示例截图：
-     
-   <img src="https://p1.ssl.qhimg.com/t11b673bcd6d55b3a2f701d7741.png" width="300" />
+- 窗口保持最小  
+- 窗口左上角到搜索框中间位置：265 像素  
 
+- 示例截图：
+<img src="https://p1.ssl.qhimg.com/t11b673bcd6d55b3a2f701d7741.png" width="300" />
 
 3. **启动 HTTP 服务**  
-   ```bash
-   python check.py
+```
+python check.py
+```
 
 4. **浏览器执行**
 ```
