@@ -52,6 +52,14 @@ python check.py
 http://127.0.0.1:8000/?url=域名或链接
 ```
 
+## SSE版本使用方法
+
+1. 运行 checksse.py
+2. 双击打开 checksse.html
+3. 一行一个，执行检测
+
+<img src="https://p1.ssl.qhimg.com/t11b673bcd685dac1216a6dc20b.jpg" alt="image">
+
 ## 其它
 
 你可以将此脚本部署在一台空闲的Windows电脑上，使用内网穿透的方法，即可远程调用，将这个HTTP服务作为你的API对外提供服务或者自己远程调用。
