@@ -60,6 +60,10 @@ http://127.0.0.1:8000/?url=域名或链接
 
 <img src="https://p1.ssl.qhimg.com/t11b673bcd685dac1216a6dc20b.jpg" alt="image">
 
+## check_pro.py加强版
+
+无需计算搜索框的坐标，自动识别 searchicon.png 和 sousuo.png 的位置进行自动点击，无需提前打开网址加载界面，只需确保微信UI主界面在前台显示，会自动打开搜索界面完成网址加载。
+
 ## 其它
 
 你可以将此脚本部署在一台空闲的Windows电脑上，使用内网穿透的方法，即可远程调用，将这个HTTP服务作为你的API对外提供服务或者自己远程调用。
