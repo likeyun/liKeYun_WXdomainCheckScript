@@ -67,6 +67,26 @@ http://127.0.0.1:8000/?url=域名或链接
 ```
 python check_pro.py
 ```
+```
+{
+  "code": -1,
+  "msg": "拦截",
+  "ret": {
+    "desc": [
+      "将要访问"
+    ]
+  },
+  "url": "ttjpg.top"
+}
+```
+{
+  "code": 0,
+  "msg": "正常",
+  "url": "baidu.com"
+}
+````
+
+```
 
 ## 其它
 
