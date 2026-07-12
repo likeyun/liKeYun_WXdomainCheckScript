@@ -153,7 +153,7 @@ http://127.0.0.1:8000
 
 即可返回检测结果。
 
-![](https://p4.ssl.qhimg.com/t11b673bcd66bb9f4f0177cc0ad.png)
+![](https://github.com/likeyun/likeyun.github.io/blob/master/Snipaste_2026-07-12_14-16-48.png?raw=true)
 
 # 🌐 远程部署
 
