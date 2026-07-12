@@ -153,6 +153,8 @@ http://127.0.0.1:8000
 
 即可返回检测结果。
 
+![](https://p4.ssl.qhimg.com/t11b673bcd66bb9f4f0177cc0ad.png)
+
 # 🌐 远程部署
 
 可以部署在：
