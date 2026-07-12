@@ -1,0 +1,5 @@
+pyautogui
+pyperclip
+uiautomation
+pillow
+opencv-python
