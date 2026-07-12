@@ -1,11 +1,19 @@
 import os
 import json
 import time
+import socket
+import threading
 import pyautogui
 import pyperclip
 import uiautomation as auto
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
+
+class IPv6HTTPServer(HTTPServer):
+    address_family = socket.AF_INET6
+
+class IPv4HTTPServer(HTTPServer):
+    address_family = socket.AF_INET
 
 # 搜索入口图片
 SEARCH_BUTTON = "./sousuo.png"
@@ -214,8 +222,61 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    host = "127.0.0.1"
+
     port = 8000
-    print("启动:", f"http://{host}:{port}")
-    server = HTTPServer((host, port), Handler)
-    server.serve_forever()
+
+
+    server4 = IPv4HTTPServer(
+        ("0.0.0.0", port),
+        Handler
+    )
+
+
+    server6 = IPv6HTTPServer(
+        ("::", port),
+        Handler
+    )
+
+
+    print()
+    print("=" * 55)
+    print("        🚀 IPv4 + IPv6 HTTP 服务启动")
+    print("=" * 55)
+    print()
+    print("  📡 IPv4 地址")
+    print(f"     http://127.0.0.1:{port}")
+    print()
+    print("  🌐 IPv6 地址")
+    print(f"     http://[你的公网IPV6]:{port}")
+    print()
+    print("  🔗 API 示例")
+    print(f"     IPv4:")
+    print(f"     http://127.0.0.1:{port}/?url=https://www.qq.com")
+    print()
+    print(f"     IPv6:")
+    print(f"     http://[你的公网IPV6]:{port}/?url=https://www.qq.com")
+    print()
+    print("=" * 55)
+    print("  ✅ 服务监听中...")
+    print()
+
+
+    threading.Thread(
+        target=server4.serve_forever,
+        daemon=True
+    ).start()
+
+
+    threading.Thread(
+        target=server6.serve_forever,
+        daemon=True
+    ).start()
+
+
+    try:
+        while True:
+            time.sleep(3600)
+
+    except KeyboardInterrupt:
+        print()
+        print("🛑 服务已停止")
