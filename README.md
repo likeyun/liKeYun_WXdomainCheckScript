@@ -125,15 +125,20 @@
 
 ## 2. 启动 HTTP 服务
 
-执行：
+**先进行依赖安装：**
+``` bash
+pip install -r requirements.txt
+```
 
+**再执行：**
 ``` bash
 python check.py
 ```
 
-启动后：
-
-    http://127.0.0.1:8000
+**启动后浏览器访问**
+``` bash
+http://127.0.0.1:8000
+```
 
 ## 3. 浏览器调用
 
