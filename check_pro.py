@@ -14,7 +14,6 @@ SEARCH_INPUT = "./searchicon.png"
 # 检测缓存
 CHECK_LOG = "./checklog.json"
 
-
 def find_all_controls(control, results=None):
     if results is None:
         results = []
@@ -65,7 +64,6 @@ def get_cache(url):
 def get_browser():
     desktop = auto.GetRootControl()
     return [c for c in desktop.GetChildren() if c.ClassName == "Chrome_WidgetWin_0"]
-
 
 def click_image(path, confidence=0.75):
     if not os.path.exists(path):
@@ -132,34 +130,64 @@ def check_page(ctrl):
 
 
 def automate_url(url):
+
+    os.startfile(
+        "weixin://"
+    )
+
+    time.sleep(1)
+
     try:
-        # 5分钟缓存检测
         cache = get_cache(url)
         if cache:
             return cache
 
-        # 执行微信检测
         browsers = open_browser()
+
         if not browsers:
-            result = {"code": -2, "msg": "没有检测窗口", "url": url}
+            result = {
+                "code": -2,
+                "msg": "没有检测窗口",
+                "url": url
+            }
+
         else:
             browser = browsers[0]
             input_url(url)
             result = check_page(browser)
             result["url"] = url
 
-        # 写入缓存
+
         logs = load_check_log()
+
         logs[url] = {
             "time": time.time(),
             "datetime": time.strftime("%Y-%m-%d %H:%M:%S"),
             "result": result,
         }
-        save_check_log(logs)
-        return result
-    except Exception as e:
-        return {"code": -2, "msg": str(e), "url": url, "ret": {}}
 
+        save_check_log(logs)
+
+        return result
+
+    except Exception as e:
+
+        return {
+            "code": -2,
+            "msg": str(e),
+            "url": url,
+            "ret": {}
+        }
+
+    finally:
+        # 所有流程结束后关闭微信当前页面
+        time.sleep(1)
+        pyautogui.hotkey(
+            "ctrl",
+            "shift",
+            "w"
+        )
+        time.sleep(1)
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
